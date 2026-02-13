@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - Branch A
   pull_request:
     branches:
-      - main
+      - Branch A
 
 jobs:
   build:
@@ -18,4 +18,4 @@ jobs:
       - name: Azure CLI script
         uses: azure/CLI@v1
         with:
-          inlineScript: az config set bicep.use_binary_from_path=false && az bicep build -f infra/main.bicep
+          inlineScript: az config set bicep.use_binary_from_path=false && az bicep build -f infra/main.bice
