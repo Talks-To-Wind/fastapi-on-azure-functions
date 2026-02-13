@@ -1,4 +1,5 @@
-on:
+      - name: Build Docker image
+        run: docker build -f .devcontainer/Dockerfile .on:
   workflow_dispatch:
   push:
     # Run when commits are pushed to mainline branch (main or master)
@@ -26,6 +27,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
 
       - name: Install azd
         uses: Azure/setup-azd@v2.0.0
